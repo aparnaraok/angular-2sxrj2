@@ -1,12 +1,11 @@
-<p>
+<!-- <p>
 product-form works!
-</p>
-<!-- 
-<p>
-  <a routerLink="/product_form">Product-form</a>
 </p> -->
-<!-- 
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+<div [hidden]="!onClickOpenForm()" *ngIf="openform">
+  <form [formGroup]="checkoutForm" 
+  (ngSubmit)="onSubmit(checkoutForm.value)">
+
   <div>
     <label for="name">
       Name
@@ -23,4 +22,5 @@ product-form works!
 
   <button class="button" type="submit">Purchase</button>
 
-</form> -->
+  </form>
+ </div>

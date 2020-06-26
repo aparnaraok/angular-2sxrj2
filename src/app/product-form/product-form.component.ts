@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../cart.service';
 
 
 
@@ -13,8 +14,7 @@ export class ProductFormComponent implements OnInit {
 
   constructor(
         private formBuilder: FormBuilder,
-        private route: ActivatedRoute,
-
+        private cartService: CartService,
   ) {
      this.checkoutForm = this.formBuilder.group({
      name: '',
@@ -24,10 +24,14 @@ export class ProductFormComponent implements OnInit {
    }
 
   ngOnInit() {
-  }
+      this.openform = this.cartService.onClickOpenForm();
 
-  // onClickOpenForm(){
-  //   this.openform=true;  
-  // }
+  }
+  
+//  onClickOpenForm(){
+//     this.openform=true;
+//     console.log("openform......", this.openform)
+//     return this.openform;
+//   }
 
 }

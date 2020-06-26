@@ -15,11 +15,14 @@ export class CartComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private formBuilder: FormBuilder,
-    ) { 
-      this.checkoutForm = this.formBuilder.group({
+    )
+     { 
+      this.checkoutForm = this.formBuilder.group(
+        {
       name: '',
       address: ''
-    });
+    }
+    );
     }
 
   ngOnInit() {
@@ -28,11 +31,11 @@ export class CartComponent implements OnInit {
 
   }
 
- onClickOpenForm(){
-    this.openform=true;
-    console.log("openform......", this.openform)
-    return this.openform;
-  }
+//  onClickOpenForm(){
+//     this.openform=true;
+//     console.log("openform......", this.openform)
+//     return this.openform;
+//   }
 
   onSubmit(customerData) {
     // Process checkout data here

@@ -26,7 +26,7 @@ import { ProductFormComponent } from './product-form/product-form.component';
       { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent },
       { path: 'shipping', component: ShippingComponent },
-      // { path: 'product-form', component: ShippingComponent },
+      { path: 'product-form', component: ProductFormComponent },
     ])
   ],
   declarations: [

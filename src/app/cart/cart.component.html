@@ -18,13 +18,18 @@ cart works!
 </div>
 
 
- <div>
+ <!-- <div>
   <button (click)="onClickOpenForm()" 
  value="Register">Proceed to register</button>
-  </div>
+  </div> -->
 
-<div [hidden]="!onClickOpenForm()" *ngIf="openform">
-  <!-- <p> reg works </p> -->
+<div class = "register" id = "reg">
+<button>
+  <a routerLink="/product-form">Register</a>Proceed to Register
+</button>
+</div>
+
+<!-- <div [hidden]="!onClickOpenForm()" *ngIf="openform">
   <form [formGroup]="checkoutForm" 
   (ngSubmit)="onSubmit(checkoutForm.value)">
 
@@ -45,6 +50,6 @@ cart works!
   <button class="button" type="submit">Purchase</button>
 
   </form>
- </div>
+ </div> -->
 
 
