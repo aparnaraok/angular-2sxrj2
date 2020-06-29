@@ -5,12 +5,12 @@ can be found in the LICENSE file at http://angular.io/license
 -->
 
 
-<!-- <head>
+<head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head> -->
+</head>
 
 
 
@@ -21,7 +21,7 @@ can be found in the LICENSE file at http://angular.io/license
     {{product.name}}
     </a>
   </h3> -->
-<div *ngFor="let product of products; index as productId">
+<!-- <div *ngFor="let product of products; index as productId">
 
   <h3>
     <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
@@ -43,27 +43,48 @@ can be found in the LICENSE file at http://angular.io/license
 </app-product-alerts>
 
 </div>
+ -->
 
 
 
 
-
-<!-- <div class = "container">
-   <table class = "table1" id = "tablecontent">
-     <thead>
-       <tr>
-        <th>#</th>
-        <th>Firstname</th>
+<ng-container>
+  <table class = "table table-bordered">
+    <thead>
+      <tr>
+        <th> Name </th>
+        <th> Description </th>
+        <th> Share </th>
+        <th> Notify </th>
       </tr>
-     </thead>
-
-     <tbody>
-       <td>fdwsdff>
-         <tr>deefssqq</tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products; index as productId">
+        <td> 
+            <a [title]="product.name + ' details'" [routerLink]="       ['/products', productId]">
+            {{ product.name }}
+          </a>
         </td>
-    <!-- <td>Product Name
-      <tr>Product123</tr>
-    </td> -->
-   <!-- </table>
-</div> -->
+        <td>
+          <p *ngIf="product.description">
+            Description : {{product.description}}
+          </p>
+        </td>
+        <td> 
+          <button (click)="share()">
+          Share
+          </button>
+        </td>
+        <td> 
+          <app-product-alerts
+            [product]="product"
+             (notify)="onNotify()">
+          </app-product-alerts>
+        </td>
+      </tr>
+  
+    </tbody>
+  </table>
+</ng-container>
+
 
